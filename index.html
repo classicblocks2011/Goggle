@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Google Demo</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#202124;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  flex-direction:column;
+}
+
+input{
+  padding:10px;
+  width:300px;
+  border-radius:20px;
+  border:none;
+}
+
+button{
+  margin-top:10px;
+  padding:8px 15px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Search Demo</h1>
+<input id="q" placeholder="Buscar...">
+<button onclick="search()">Buscar</button>
+
+<div id="login" style="display:none; margin-top:20px;">
+  <h2>Login (simulación)</h2>
+  <p style="font-size:12px;color:#aaa;">
+    Esto es una demo. No introduzcas datos reales.
+  </p>
+
+  <input placeholder="Usuario"><br>
+  <input type="password" placeholder="Contraseña"><br>
+  <button onclick="finish()">Entrar</button>
+</div>
+
+<script>
+
+function search(){
+  let q=document.getElementById("q").value
+
+  if(q){
+    document.getElementById("login").style.display="block"
+  }
+}
+
+function finish(){
+  document.body.innerHTML = `
+    <h1>Error critico de la demo, informe a goggle.error.report@gmail.com con su usuario y contraseña para continuar seguramente</h1>
+    <p>No se ha guardado nada</p>
+  `
+}
+
+</script>
+
+</body>
+</html>
